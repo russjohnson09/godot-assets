@@ -1,0 +1,18 @@
+[project]
+name = "python-scripts"
+version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    # uv add midi2audio
+    "yt-dlp[default]>=2026.2.4",
+    "pandas>=3.0.1",
+
+    "moviepy>=2.2.1",
+    "pandas>=3.0.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.1",
+]

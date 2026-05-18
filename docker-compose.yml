@@ -1,0 +1,21 @@
+
+
+# docker compose build
+# docker compose up
+# docker compose exec util /bin/bash
+
+# docker compose run --rm util /bin/bash
+
+# https://stackoverflow.com/questions/76757972/unable-to-access-bin-bash-in-docker-container
+# docker compose run --rm util //bin/bash
+services:
+
+  util:
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    container_name: util
+    build:
+      context: .
+    volumes:
+      - ./populate_assets.py:/data/populate_assets.py
+      - ./assets:/data/assets
