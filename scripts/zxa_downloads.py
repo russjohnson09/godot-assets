@@ -1,0 +1,6 @@
+
+
+
+# https://sprites-inc.com/files/ZX/ZXA/Boss/8Boss/mmzxa_Condorrock.png
+
+
