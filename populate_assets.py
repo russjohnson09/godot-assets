@@ -230,13 +230,61 @@ def _download_iris_2():
 
 
 
+def _split_mp3(video_clip: VideoFileClip, start, end):
+
+    pass
+
+
+def _split_mp3s(name, mp4_path,  output_dir = None):
+
+    pass
+
+def _convert_to_mp3(name, mp4_path,  output_dir = None):
+    if not output_dir:
+        output_dir = os.path.dirname(mp4_path)
+    
+    mp3_path = os.path.join(output_dir, f'{name}.mp3')
+
+    original_video = VideoFileClip(mp4_path)
+
+    if not pathlib.Path(mp3_path).is_file():
+        original_video.audio.write_audiofile(mp3_path)
+
+
+    
+
+def _download(url, name, output_dir):
+    full_out_dir = os.path.abspath(output_dir)
+    outtmpl = os.path.join(full_out_dir, f'{name}.mp4')
+
+    if not pathlib.Path(outtmpl).is_file():
+        ydl_opts = {'outtmpl': outtmpl}
+        with YoutubeDL(ydl_opts) as ydl:
+            downloaded = ydl.extract_info(url)
+
+    return outtmpl
+
+def _download_short(url, name, output_dir = 'assets/shorts'):
+    outtmpl = _download(url, name, output_dir=output_dir)        
+    _convert_to_mp3(name, outtmpl, output_dir=output_dir)
+
+def _download_shorts():
+    shorts = [
+        ['kana_lesson', 'https://www.youtube.com/shorts/Pgu4T20kSNQ']
+    ]
+    for short in shorts:
+        _download_short(short[1], short[0])
+    pass
+
+
 def main():
 
     print("populate_assets")
-    _download_iris()
-    _download_iris_2()
-    
-    _clip_the_boys()
+    # _download_iris()
+    # _download_iris_2()
+    # _clip_the_boys()
     # _copy_assets_to_godot()
+
+    _download_shorts()
 
 main()
