@@ -5,9 +5,16 @@
 *.ogv
 *.mkv
 *.xcf
+*.svg
+
+# Anything under 10 kb can just always be saved directly to the repo.
+!Silhouette-mouse-standing.svg
 
 # hir　ひらがな
 # カタカナ
 
 # https://upload.wikimedia.org/wikipedia/commons/0/09/Hiragana_Chart_Seion_Dakuon_Yoon.png
 
+
+
+# https://upload.wikimedia.org/wikipedia/commons/2/21/Silhouette-mouse-standing.svg
