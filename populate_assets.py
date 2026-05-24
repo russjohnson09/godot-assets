@@ -31,15 +31,12 @@ def _get_timing(file_path):
 
     dict_output = df.to_dict(orient="index")
 
-    print(dict_output)
-    # tests\test_font.py {0: {'start': 1000, 'text': 'PRESS'}, 1: {'start': 2000, 'text': ''}, 2: {'start': 3000, 'text': 'ZIP'}}
-    
+   
     result = []
     for key in list(dict_output.keys()):
         row = dict_output[key]
         result.append(row)
 
-    print(result)
     return result
 
 
@@ -230,14 +227,33 @@ def _download_iris_2():
 
 
 
-def _split_mp3(video_clip: VideoFileClip, start, end):
+def _split_mp3(video_clip: VideoFileClip, start, end, text, output_dir):
+
+    filepath = os.path.join(output_dir, f'{text}.mp3')
+    clipped_video = video_clip.subclipped(start, end)
+    _make_path_directory(filepath)
+
+    clipped_video.audio.write_audiofile(filepath)
+    # print(filepath)
 
     pass
 
 
-def _split_mp3s(name, mp4_path,  output_dir = None):
+def _split_mp3s(name, video_clip: VideoFileClip, output_dir = None):
+    csv_location = os.path.join(output_dir, f'{name}.csv')
 
-    pass
+    if not pathlib.Path(csv_location).is_file():
+        return
+    
+
+    timing = _get_timing(csv_location)
+
+    print(timing)
+
+    for time in timing:
+        _split_mp3(video_clip, time.get('start'), time.get('end'), time.get('text'),  os.path.join(output_dir, name))
+    
+
 
 def _convert_to_mp3(name, mp4_path,  output_dir = None):
     if not output_dir:
@@ -250,8 +266,9 @@ def _convert_to_mp3(name, mp4_path,  output_dir = None):
     if not pathlib.Path(mp3_path).is_file():
         original_video.audio.write_audiofile(mp3_path)
 
+    _split_mp3s(name, original_video, output_dir)
 
-    
+
 
 def _download(url, name, output_dir):
     full_out_dir = os.path.abspath(output_dir)
