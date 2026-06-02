@@ -6,6 +6,7 @@
 *.mkv
 *.xcf
 *.svg
+*.jpg
 
 # Anything under 10 kb can just always be saved directly to the repo.
 !Silhouette-mouse-standing.svg
@@ -25,3 +26,15 @@
 
 # https://upload.wikimedia.org/wikipedia/commons/9/91/Japanese_Katakana_A.svg
 Japanese_Katakana_A.svg
+
+
+# TODO python script that downloads these
+# https://upload.wikimedia.org/wikipedia/commons/4/49/Armadillo2.jpg
+Aramdillo2.jpg
+
+# https://commons.wikimedia.org/wiki/File:Clarence_F._Brown_-_Armadillo_Rag_-_Two_Step_(1911).ogg
+
+
+# https://commons.wikimedia.org/wiki/File:Birds_and_All_Nature_1898-07_04_various.ogg
+
+# https://librivox.org/birds-and-all-nature-vol-iv-no-1-july-1898-by-various
