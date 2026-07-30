@@ -294,6 +294,25 @@ def _download_shorts():
     pass
 
 
+def _download_misc_mp3(url, name, output_dir = 'assets/mp3'):
+    outtmpl = _download(url, name, output_dir=output_dir)        
+    _convert_to_mp3(name, outtmpl, output_dir=output_dir)
+
+def _download_misc_mp3s():
+    shorts = [
+        # https://mp3cow.com/
+        # for kids are not available for download as easily with this python library
+        ['ah_les_crocodiles', 'https://youtu.be/3YI08sRToU0?si=Zh4jQSZ2zUzRTLGf']
+    ]
+    for short in shorts:
+        _download_misc_mp3(short[1], short[0])
+    pass
+
+
+# https://commons.wikimedia.org/wiki/File:Ah_les_crocodile.mp3
+# https://www.youtube.com/watch?v=3YI08sRToU0
+# Ah les crocodiles - Comptines et chansons pour enfants
+# uv run populate_assets.py
 def main():
 
     print("populate_assets")
@@ -302,6 +321,8 @@ def main():
     # _clip_the_boys()
     # _copy_assets_to_godot()
 
-    _download_shorts()
+    # _download_shorts()
+
+    _download_misc_mp3s()
 
 main()

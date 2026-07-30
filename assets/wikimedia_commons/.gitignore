@@ -6,6 +6,7 @@
 *.mkv
 *.xcf
 *.svg
+*.jpg
 
 # Anything under 10 kb can just always be saved directly to the repo.
 !Silhouette-mouse-standing.svg
@@ -25,3 +26,35 @@
 
 # https://upload.wikimedia.org/wikipedia/commons/9/91/Japanese_Katakana_A.svg
 Japanese_Katakana_A.svg
+
+
+
+# TODO python script that downloads these
+# https://upload.wikimedia.org/wikipedia/commons/4/49/Armadillo2.jpg
+Aramdillo2.jpg
+# https://commons.wikimedia.org/wiki/File:En-us-armadillo.ogg
+En-us-armadillo.ogg
+# https://upload.wikimedia.org/wikipedia/commons/7/70/Birds_and_All_Nature_1898-07_04_various.ogg
+Birds_and_All_Nature_1898-07_04_various.ogg
+
+
+!Birds_and_All_Nature_1898-07_04_various.txt
+
+# https://commons.wikimedia.org/wiki/File:Clarence_F._Brown_-_Armadillo_Rag_-_Two_Step_(1911).ogg
+
+
+# https://commons.wikimedia.org/wiki/File:Nl-armadillo%27s.ogg
+# https://upload.wikimedia.org/wikipedia/commons/5/55/Nl-armadillo%27s.ogg
+Nl-armadillo's.ogg
+
+
+# https://upload.wikimedia.org/wikipedia/commons/b/b3/LL-Q7026_%28cat%29-Marvives-armadillo.wav
+LL-Q7026_(cat)-Marvives-armadillo.wav
+
+
+
+# https://commons.wikimedia.org/wiki/File:Soccer_Ball_-_The_Noun_Project.svg
+!Soccer_Ball_-_The_Noun_Project.svg
+
+# convert this gif into individual png files using ffmpeg
+# https://upload.wikimedia.org/wikipedia/commons/e/ec/Real_Human_Heart_Turntable.gif
